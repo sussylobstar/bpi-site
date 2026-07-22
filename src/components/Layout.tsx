@@ -4,8 +4,11 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { ScrollToTop } from "./ui";
 import { startLenis, stopLenis } from "../lib/lenis";
+import { useSeo } from "../lib/seo";
 
 export default function Layout() {
+  useSeo();
+
   useEffect(() => {
     startLenis();
     return stopLenis;
