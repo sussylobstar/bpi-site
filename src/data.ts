@@ -391,22 +391,24 @@ export type Location = {
   zip_code: string;
   phone: string;
   is_headquarters: boolean;
+  lat: number;
+  lng: number;
 };
 
 export const LOCATIONS: Location[] = [
-  { id: 14, city: "Memphis", state: "TN", label: "World Headquarters", address: "3251 Players Club Parkway", zip_code: "38125", phone: "(901) 744-6201", is_headquarters: true },
-  { id: 15, city: "Memphis", state: "TN", label: "Distribution Center", address: "3263 Sharpe Ave", zip_code: "38111", phone: "(901) 744-6201", is_headquarters: false },
-  { id: 23, city: "Nashville", state: "TN", label: "Nashville", address: "725 Massman Drive", zip_code: "37210", phone: "(615) 457-8510", is_headquarters: false },
-  { id: 26, city: "Birmingham", state: "AL", label: "Birmingham", address: "2048 Center Point Pkwy", zip_code: "35215", phone: "(205) 558-2710", is_headquarters: false },
-  { id: 25, city: "Huntsville", state: "AL", label: "Huntsville", address: "215 Swancott Road, Suite E", zip_code: "35806", phone: "(256) 489-3663", is_headquarters: false },
-  { id: 18, city: "Mobile", state: "AL", label: "Mobile", address: "5270 Bldg. B, Business Pkwy", zip_code: "36582", phone: "(251) 443-3433", is_headquarters: false },
-  { id: 16, city: "Little Rock", state: "AR", label: "Little Rock", address: "1316 North Hills Blvd, Suite 1", zip_code: "72206", phone: "(501) 490-1780", is_headquarters: false },
-  { id: 24, city: "New Orleans", state: "LA", label: "New Orleans", address: "2829 Peoples Ave, Suite B", zip_code: "70058", phone: "(504) 227-0477", is_headquarters: false },
-  { id: 17, city: "Jackson", state: "MS", label: "Jackson", address: "2295 Boling Street", zip_code: "39213", phone: "(601) 981-3771", is_headquarters: false },
-  { id: 20, city: "Austin", state: "TX", label: "Austin", address: "2519 Scarbrough Dr, STE 240", zip_code: "78728", phone: "(512) 989-2710", is_headquarters: false },
-  { id: 19, city: "Fort Worth", state: "TX", label: "Dallas / Fort Worth", address: "4251 Fleetwood Rd", zip_code: "76155", phone: "(817) 571-3203", is_headquarters: false },
-  { id: 21, city: "Houston", state: "TX", label: "Houston", address: "10375 Tanner Road", zip_code: "77041", phone: "(713) 466-7171", is_headquarters: false },
-  { id: 22, city: "San Antonio", state: "TX", label: "San Antonio", address: "4902 Perrin Creek", zip_code: "78217", phone: "(210) 599-0772", is_headquarters: false },
+  { id: 14, city: "Memphis", state: "TN", label: "World Headquarters", address: "3251 Players Club Parkway", zip_code: "38125", phone: "(901) 744-6201", is_headquarters: true, lat: 35.0268, lng: -89.8528 },
+  { id: 15, city: "Memphis", state: "TN", label: "Distribution Center", address: "3263 Sharpe Ave", zip_code: "38111", phone: "(901) 744-6201", is_headquarters: false, lat: 35.1085, lng: -89.9545 },
+  { id: 23, city: "Nashville", state: "TN", label: "Nashville", address: "725 Massman Drive", zip_code: "37210", phone: "(615) 457-8510", is_headquarters: false, lat: 36.1357, lng: -86.7488 },
+  { id: 26, city: "Birmingham", state: "AL", label: "Birmingham", address: "2048 Center Point Pkwy", zip_code: "35215", phone: "(205) 558-2710", is_headquarters: false, lat: 33.6354, lng: -86.6834 },
+  { id: 25, city: "Huntsville", state: "AL", label: "Huntsville", address: "215 Swancott Road, Suite E", zip_code: "35806", phone: "(256) 489-3663", is_headquarters: false, lat: 34.7164, lng: -86.6383 },
+  { id: 18, city: "Mobile", state: "AL", label: "Mobile", address: "5270 Bldg. B, Business Pkwy", zip_code: "36582", phone: "(251) 443-3433", is_headquarters: false, lat: 30.5469, lng: -88.2314 },
+  { id: 16, city: "Little Rock", state: "AR", label: "Little Rock", address: "1316 North Hills Blvd, Suite 1", zip_code: "72206", phone: "(501) 490-1780", is_headquarters: false, lat: 34.7225, lng: -92.2678 },
+  { id: 24, city: "New Orleans", state: "LA", label: "New Orleans", address: "2829 Peoples Ave, Suite B", zip_code: "70058", phone: "(504) 227-0477", is_headquarters: false, lat: 29.9029, lng: -90.0264 },
+  { id: 17, city: "Jackson", state: "MS", label: "Jackson", address: "2295 Boling Street", zip_code: "39213", phone: "(601) 981-3771", is_headquarters: false, lat: 32.3547, lng: -90.1848 },
+  { id: 20, city: "Austin", state: "TX", label: "Austin", address: "2519 Scarbrough Dr, STE 240", zip_code: "78728", phone: "(512) 989-2710", is_headquarters: false, lat: 30.4425, lng: -97.6772 },
+  { id: 19, city: "Fort Worth", state: "TX", label: "Dallas / Fort Worth", address: "4251 Fleetwood Rd", zip_code: "76155", phone: "(817) 571-3203", is_headquarters: false, lat: 32.8428, lng: -97.054 },
+  { id: 21, city: "Houston", state: "TX", label: "Houston", address: "10375 Tanner Road", zip_code: "77041", phone: "(713) 466-7171", is_headquarters: false, lat: 29.8565, lng: -95.5598 },
+  { id: 22, city: "San Antonio", state: "TX", label: "San Antonio", address: "4902 Perrin Creek", zip_code: "78217", phone: "(210) 599-0772", is_headquarters: false, lat: 29.5185, lng: -98.4125 },
 ];
 
 export const NAV = [
