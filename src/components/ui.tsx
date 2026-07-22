@@ -1,14 +1,18 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import type { ReactNode } from "react";
-import { scrollTopInstant } from "../lib/lenis";
+import { scrollTopInstant, scrollToTarget } from "../lib/lenis";
 
-/* Scrolls to top on every route change (through Lenis when active) */
+/* Scrolls to top on route change, or to the hash target when present */
 export function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    scrollTopInstant();
-  }, [pathname]);
+    if (hash) {
+      requestAnimationFrame(() => scrollToTarget(hash));
+    } else {
+      scrollTopInstant();
+    }
+  }, [pathname, hash]);
   return null;
 }
 

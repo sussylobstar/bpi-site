@@ -123,6 +123,33 @@ html.lenis body {
   animation-play-state: paused;
 }
 
+/* Homepage vendor carousel — two rows drifting in opposite directions.
+   Rows hold 3 copies, so -33.333% loops seamlessly. */
+@keyframes vendorLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+@keyframes vendorRight {
+  from {
+    transform: translateX(-33.333%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.vendor-row-a {
+  animation: vendorLeft 42s linear infinite;
+  will-change: transform;
+}
+.vendor-row-b {
+  animation: vendorRight 42s linear infinite;
+  will-change: transform;
+}
+
 /* Scroll cue — dot stretches and drops inside the mouse outline */
 @keyframes scrollDown {
   0% {

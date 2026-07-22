@@ -1,5 +1,6 @@
 import { PageHero } from "../components/ui";
 import Products from "../components/Products";
+import RoomvoCallout from "../components/RoomvoCallout";
 
 export default function ProductsIndex() {
   return (
@@ -11,6 +12,7 @@ export default function ProductsIndex() {
         img="/img/slide-tile.jpg"
       />
       <Products />
+      <RoomvoCallout />
     </>
   );
 }

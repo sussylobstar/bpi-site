@@ -278,6 +278,68 @@ export const POSTS: Post[] = [
   },
 ];
 
+/* Welcome video — swap in BPI's real YouTube ID when provided. */
+export const WELCOME_VIDEO = {
+  // TODO(BPI): replace with the real welcome-video YouTube ID
+  youtubeId: "ScMzIvxBSi4",
+  title: "Welcome to Building Plastics Inc.",
+  blurb:
+    "Sixty years of making the floor the easiest part of the job — meet the team, the branches and the way we work.",
+};
+
+export type Award = {
+  title: string;
+  org: string;
+  year: string;
+};
+
+/* Placeholder awards — BPI to confirm/replace with real recognition. */
+export const AWARDS: Award[] = [
+  { title: "Distributor of the Year", org: "Regional Flooring Association", year: "2024" },
+  { title: "Top Workplaces — Employee-Owned", org: "Commercial Appeal", year: "2023" },
+  { title: "Vendor Partner of Excellence", org: "Mannington Mills", year: "2023" },
+  { title: "60 Years in Business", org: "Since 1963", year: "2023" },
+];
+
+export type NextStep = {
+  title: string;
+  desc: string;
+  cta: string;
+  href: string;
+  img?: string;
+};
+
+export const NEXT_STEPS: NextStep[] = [
+  {
+    title: "Become a Dealer",
+    desc: "Open an account and get a dedicated rep, deep local stock and 24/7 ordering.",
+    cta: "Apply now",
+    href: "/become-a-dealer",
+    img: "/img/slide-counters.jpg",
+  },
+  {
+    title: "Browse Products",
+    desc: "Explore all seven categories — the front door to the full BPI catalog.",
+    cta: "View catalog",
+    href: "/products",
+    img: "/img/slide-tile.jpg",
+  },
+  {
+    title: "Find a Branch",
+    desc: "Thirteen distribution centers across seven Southeastern states.",
+    cta: "Where to find us",
+    href: "/#locations",
+    img: "/img/slide-hardwood.jpg",
+  },
+  {
+    title: "Talk to Us",
+    desc: "Questions on product, availability or an account — reach the team directly.",
+    cta: "Contact BPI",
+    href: "/contact",
+    img: "/img/slide-carpet.jpg",
+  },
+];
+
 export const VENDORS = [
   "Mannington",
   "Bruce",

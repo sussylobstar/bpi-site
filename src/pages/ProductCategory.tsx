@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { PageHero, Section, Btn, Arrow } from "../components/ui";
+import RoomvoCallout from "../components/RoomvoCallout";
 import { PRODUCTS } from "../data";
 import NotFound from "./NotFound";
 
@@ -67,6 +68,8 @@ export default function ProductCategory() {
           </aside>
         </div>
       </Section>
+
+      <RoomvoCallout product={product.title} />
 
       <Section tone="light">
         <h2 className="font-extralight text-[clamp(22px,2.4vw,34px)] tracking-[-0.01em] mb-8">
