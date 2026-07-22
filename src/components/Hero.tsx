@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { SLIDES, VENDORS } from "../data";
+import { scrollToTarget } from "../lib/lenis";
 
 const AUTO_MS = 6000;
 const prefersReduced = () =>
@@ -170,6 +171,10 @@ export default function Hero() {
       <a
         href="#mission"
         aria-label="Scroll to content"
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToTarget("#mission");
+        }}
         className="absolute left-1/2 bottom-[72px] z-[6] -translate-x-1/2"
       >
         <span className="block h-[38px] w-[24px] rounded-[14px] border-[1.5px] border-white/70 relative">

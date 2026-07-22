@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import type { ReactNode } from "react";
+import { scrollTopInstant } from "../lib/lenis";
 
-/* Scrolls to top on every route change */
+/* Scrolls to top on every route change (through Lenis when active) */
 export function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollTopInstant();
   }, [pathname]);
   return null;
 }
