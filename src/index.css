@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Archivo variable — thin grotesque standing in for Cosentino's       */
+/* licensed "Diagramm". License a proper thin grotesque for production. */
+/* ------------------------------------------------------------------ */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/archivo-latin.woff2") format("woff2");
+}
+
+@theme {
+  /* Brand */
+  --color-red: #da1a32; /* BPI brand red, from the white-on-red mark */
+  --color-red-deep: #b3121f;
+
+  /* Warm near-black ground — the site lives here */
+  --color-ink: #0d0b0b;
+  --color-ink-2: #171313; /* raised panels / alt bands */
+  --color-ink-3: #221c1c; /* hairline surfaces */
+
+  /* One genuinely-neutral light surface for the showroom band.        */
+  /* Kept at ~0 chroma on purpose — not a warm cream.                  */
+  --color-light: #f3f2f1;
+  --color-light-2: #e7e5e3;
+
+  --font-display: "Archivo", "Helvetica Neue", "Segoe UI", system-ui,
+    -apple-system, Arial, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  :root {
+    --pad: clamp(20px, 4.2vw, 84px);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-red);
+    color: #fff;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Visible, on-brand keyboard focus everywhere */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-red);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@layer utilities {
+  /* The section gutter used across the page */
+  .gutter {
+    padding-inline: var(--pad);
+  }
+
+  /* Thin architectural display type — the Cosentino move */
+  .display {
+    font-weight: 200;
+    text-transform: uppercase;
+    line-height: 0.98;
+    letter-spacing: 0.005em;
+  }
+}
+
+/* Vendor marquee — seamless loop (track holds two copies, shift by half) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+.marquee-bar:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Scroll cue — dot stretches and drops inside the mouse outline */
+@keyframes scrollDown {
+  0% {
+    top: 7px;
+    height: 6px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    top: 14px;
+    height: 9px;
+    opacity: 1;
+  }
+  75% {
+    top: 22px;
+    height: 4px;
+    opacity: 0.4;
+  }
+  100% {
+    top: 22px;
+    height: 4px;
+    opacity: 0;
+  }
+}
+.scroll-wheel {
+  animation: scrollDown 1.8s cubic-bezier(0.3, 0, 0.2, 1) infinite;
+}
+
+/* Section reveal — enhances an already-visible default (no visibility gating) */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  animation: riseIn 0.9s var(--ease-out-expo) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
