@@ -74,7 +74,8 @@ export default function LocationsMap({
     <MapContainer
       center={[32.8, -90]}
       zoom={5}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
+      wheelPxPerZoomLevel={90}
       className="h-full w-full bg-ink-2"
       attributionControl
     >
