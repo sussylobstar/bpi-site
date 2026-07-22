@@ -27,7 +27,10 @@ export default function Locations() {
 
         <div className="grid gap-4 lg:grid-cols-[1.35fr_1fr]">
           {/* interactive map */}
-          <div className="relative h-[360px] lg:h-[620px] border border-white/10 overflow-hidden order-1 bg-ink-2">
+          <div
+            data-lenis-prevent
+            className="relative h-[360px] lg:h-[620px] border border-white/10 overflow-hidden order-1 bg-ink-2"
+          >
             <Suspense
               fallback={
                 <div className="absolute inset-0 grid place-items-center text-[13px] tracking-[0.14em] uppercase text-white/40">
