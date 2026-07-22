@@ -274,6 +274,11 @@ a:hover > .vendor-logo {
   filter: none;
   opacity: 1;
 }
+/* Hero strip sits on the dark ground — render logos as uniform white */
+.vendor-logo-strip {
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+}
 .vendor-row-a {
   animation: vendorLeft 42s linear infinite;
   will-change: transform;

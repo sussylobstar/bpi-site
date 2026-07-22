@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { SLIDES, VENDORS } from "../data";
+import { SLIDES, VENDOR_BRANDS } from "../data";
 import { scrollToTarget } from "../lib/lenis";
 
 const AUTO_MS = 6000;
@@ -197,15 +197,24 @@ export default function Hero() {
         <span className="absolute left-0 top-0 bottom-0 z-[3] hidden sm:flex items-center pl-[var(--pad)] pr-8 text-[10px] tracking-[0.24em] uppercase text-white/55 font-semibold bg-ink pointer-events-none">
           Our Vendors
         </span>
-        <div className="marquee-track flex shrink-0 items-center gap-[clamp(30px,4vw,60px)] pl-[clamp(30px,4vw,60px)]">
-          {[...VENDORS, ...VENDORS].map((v, i) => (
-            <span
-              key={i}
-              className="text-[13px] tracking-[0.14em] uppercase text-white/60 font-medium whitespace-nowrap"
-            >
-              {v}
-            </span>
-          ))}
+        <div className="marquee-track flex shrink-0 items-center gap-[clamp(30px,4vw,56px)] pl-[clamp(30px,4vw,56px)]">
+          {[...VENDOR_BRANDS, ...VENDOR_BRANDS].map((b, i) =>
+            b.logo && !b.stripWordmark ? (
+              <img
+                key={i}
+                src={`/img/vendors/${b.logo}`}
+                alt={b.name}
+                className="vendor-logo-strip h-[22px] w-auto object-contain flex-none"
+              />
+            ) : (
+              <span
+                key={i}
+                className="text-[13px] tracking-[0.14em] uppercase text-white/55 font-medium whitespace-nowrap flex-none"
+              >
+                {b.name}
+              </span>
+            ),
+          )}
         </div>
       </div>
     </section>
