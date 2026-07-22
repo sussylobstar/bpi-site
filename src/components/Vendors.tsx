@@ -1,12 +1,42 @@
+import { useState } from "react";
 import { Section } from "./ui";
-import { VENDORS } from "../data";
+import { VENDOR_BRANDS } from "../data";
+import type { Brand } from "../data";
 
-/* A dedicated, prominent vendor carousel for the homepage body.
-   Two duplicated rows scrolling in opposite directions. */
+/* Renders the official logo if a file exists at /img/vendors/<slug>.svg,
+   otherwise falls back to a clean wordmark — never a broken image. */
+function VendorLogo({ brand }: { brand: Brand }) {
+  const [hasLogo, setHasLogo] = useState(true);
+  const external = brand.url.startsWith("http");
+  return (
+    <a
+      href={brand.url}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      aria-label={brand.name}
+      className="mx-3 flex h-[76px] w-[190px] flex-none items-center justify-center border border-ink/12 px-6"
+    >
+      {brand.logo && hasLogo ? (
+        <img
+          src={`/img/vendors/${brand.slug}.svg`}
+          alt={`${brand.name} logo`}
+          loading="lazy"
+          onError={() => setHasLogo(false)}
+          className="vendor-logo max-h-9 w-auto object-contain"
+        />
+      ) : (
+        <span className="whitespace-nowrap text-[clamp(15px,1.6vw,20px)] tracking-[0.06em] uppercase text-ink/70 font-light">
+          {brand.name}
+        </span>
+      )}
+    </a>
+  );
+}
+
 export default function Vendors() {
-  const half = Math.ceil(VENDORS.length / 2);
-  const rowA = VENDORS.slice(0, half);
-  const rowB = VENDORS.slice(half).concat(rowA.slice(0, 2));
+  const half = Math.ceil(VENDOR_BRANDS.length / 2);
+  const rowA = VENDOR_BRANDS.slice(0, half);
+  const rowB = VENDOR_BRANDS.slice(half).concat(rowA.slice(0, 2));
 
   return (
     <Section tone="light" id="vendors">
@@ -26,13 +56,8 @@ export default function Vendors() {
             key={i}
             className={`flex w-max ${i === 0 ? "vendor-row-a" : "vendor-row-b"}`}
           >
-            {[...row, ...row, ...row].map((v, j) => (
-              <span
-                key={j}
-                className="mx-3 inline-flex items-center justify-center whitespace-nowrap border border-ink/12 px-8 py-5 text-[clamp(15px,1.6vw,20px)] tracking-[0.06em] uppercase text-ink/70 font-light"
-              >
-                {v}
-              </span>
+            {[...row, ...row, ...row].map((b, j) => (
+              <VendorLogo key={`${b.slug}-${j}`} brand={b} />
             ))}
           </div>
         ))}

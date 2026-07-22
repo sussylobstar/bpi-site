@@ -262,6 +262,18 @@ html.lenis body {
     transform: translateX(0);
   }
 }
+/* Uniform muted logo wall — full color on hover (keeps mixed logos cohesive) */
+.vendor-logo {
+  filter: grayscale(1);
+  opacity: 0.65;
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease;
+}
+a:hover > .vendor-logo {
+  filter: none;
+  opacity: 1;
+}
 .vendor-row-a {
   animation: vendorLeft 42s linear infinite;
   will-change: transform;
