@@ -13,6 +13,14 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock background scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
@@ -21,7 +29,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="gutter flex items-center justify-between py-[clamp(14px,2.2vw,22px)]">
+      <div className="relative z-50 gutter flex items-center justify-between py-[clamp(14px,2.2vw,22px)]">
         <Link to="/" className="flex items-center gap-3" aria-label="BPI home">
           <img
             src="/img/bpi-logo.png"
@@ -78,10 +86,10 @@ export default function Header() {
         </button>
       </div>
 
-      {/* mobile drawer */}
+      {/* mobile full-screen menu (sits below the header bar so the close button stays visible) */}
       {open && (
         <nav
-          className="lg:hidden gutter pb-8 pt-2 bg-ink/95 backdrop-blur-md border-b border-white/10"
+          className="lg:hidden fixed inset-0 z-40 bg-ink flex flex-col overflow-y-auto pt-[92px] pb-12 gutter"
           aria-label="Primary mobile"
         >
           <ul className="flex flex-col">
@@ -89,7 +97,7 @@ export default function Header() {
               <li key={n.href}>
                 <Link
                   to={n.href}
-                  className="block py-3 text-[18px] font-light text-white/85 hover:text-white border-b border-white/5"
+                  className="block py-4 text-[22px] font-light text-white/85 hover:text-white border-b border-white/10"
                   onClick={() => setOpen(false)}
                 >
                   {n.label}
@@ -99,10 +107,10 @@ export default function Header() {
           </ul>
           <Link
             to="/become-a-dealer"
-            className="mt-5 inline-flex bg-red px-6 py-3 text-[15px] font-normal"
+            className="mt-8 inline-flex items-center gap-2.5 self-start bg-red px-7 py-3.5 text-[16px] font-normal hover:bg-red-deep transition-colors"
             onClick={() => setOpen(false)}
           >
-            Become a Dealer
+            Become a Dealer <span aria-hidden>→</span>
           </Link>
         </nav>
       )}
