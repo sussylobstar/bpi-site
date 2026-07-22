@@ -301,6 +301,16 @@ export const AWARDS: Award[] = [
   { title: "60 Years in Business", org: "Since 1963", year: "2023" },
 ];
 
+// Industry associations BPI belongs to. `logo` = file in /img/partners/.
+export type Partner = { name: string; full: string; url: string; logo?: string };
+
+export const PARTNERS: Partner[] = [
+  { name: "NAFCD", full: "North American Assoc. of Floor Covering Distributors", url: "https://www.nafcd.org", logo: "nafcd.png" },
+  { name: "NWFA", full: "National Wood Flooring Association", url: "https://nwfa.org", logo: "nwfa.png" },
+  { name: "IIDA", full: "International Interior Design Association", url: "https://www.iida.org", logo: "iida.svg" },
+  { name: "AIA", full: "American Institute of Architects", url: "https://www.aia.org", logo: "aia.svg" },
+];
+
 export type NextStep = {
   title: string;
   desc: string;

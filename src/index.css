@@ -279,6 +279,18 @@ a:hover > .vendor-logo {
   filter: brightness(0) invert(1);
   opacity: 0.6;
 }
+/* Industry-partner logos on the light band — muted grayscale, color on hover */
+.partner-logo {
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease;
+}
+a:hover > .partner-logo {
+  filter: none;
+  opacity: 1;
+}
 .vendor-row-a {
   animation: vendorLeft 42s linear infinite;
   will-change: transform;
