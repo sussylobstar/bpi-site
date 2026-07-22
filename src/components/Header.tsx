@@ -89,7 +89,8 @@ export default function Header() {
       {/* mobile full-screen menu (sits below the header bar so the close button stays visible) */}
       {open && (
         <nav
-          className="lg:hidden fixed inset-0 z-40 bg-ink flex flex-col overflow-y-auto pt-[92px] pb-12 gutter"
+          data-lenis-prevent
+          className="lg:hidden fixed inset-0 z-40 bg-ink flex flex-col overflow-y-auto overscroll-contain pt-[92px] pb-16 gutter"
           aria-label="Primary mobile"
         >
           <ul className="flex flex-col">

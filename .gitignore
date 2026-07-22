@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# local-only mobile preview harness
+public/mobile.html
