@@ -18,7 +18,7 @@ function VendorLogo({ brand }: { brand: Brand }) {
     >
       {brand.logo && hasLogo ? (
         <img
-          src={`/img/vendors/${brand.slug}.svg`}
+          src={`/img/vendors/${brand.logo}`}
           alt={`${brand.name} logo`}
           loading="lazy"
           onError={() => setHasLogo(false)}
