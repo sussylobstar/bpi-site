@@ -344,18 +344,26 @@ export const NEXT_STEPS: NextStep[] = [
    /public/img/vendors/<slug>.svg (or .png) and they replace the wordmark
    automatically — see public/img/vendors/README.txt. */
 // `logo` = filename in /img/vendors/ (png or svg). Omit to show a wordmark.
-export type Brand = { name: string; slug: string; url: string; logo?: string };
+// `stripWordmark` = force the wordmark in the dark hero strip (for boxed logos
+// that turn into a white blob when whitened for a dark background).
+export type Brand = {
+  name: string;
+  slug: string;
+  url: string;
+  logo?: string;
+  stripWordmark?: boolean;
+};
 
 export const VENDOR_BRANDS: Brand[] = [
   { name: "Mannington", slug: "mannington", url: "https://www.mannington.com", logo: "mannington.png" },
   { name: "Bruce", slug: "bruce", url: "https://www.bruce.com", logo: "bruce.svg" },
-  { name: "Mullican", slug: "mullican", url: "https://www.mullicanflooring.com" },
+  { name: "Mullican", slug: "mullican", url: "https://www.mullicanflooring.com", logo: "mullican.png" },
   { name: "Lifecore", slug: "lifecore", url: "https://www.lifecoreflooring.com" },
-  { name: "Homerwood", slug: "homerwood", url: "https://www.homerwood.com" },
+  { name: "Homerwood", slug: "homerwood", url: "https://www.homerwood.com", logo: "homerwood.svg" },
   { name: "Prestige", slug: "prestige", url: "#" },
-  { name: "TMBR.", slug: "tmbr", url: "#" },
+  { name: "TMBR.", slug: "tmbr", url: "https://www.tmbrflooring.com", logo: "tmbr.svg" },
   { name: "Daltile", slug: "daltile", url: "https://www.daltile.com", logo: "daltile.png" },
-  { name: "Shaw", slug: "shaw", url: "https://shawfloors.com", logo: "shaw.svg" },
+  { name: "Shaw", slug: "shaw", url: "https://shawfloors.com", logo: "shaw.svg", stripWordmark: true },
   { name: "Mohawk", slug: "mohawk", url: "https://www.mohawkflooring.com", logo: "mohawk.svg" },
 ];
 
