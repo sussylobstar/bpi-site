@@ -340,6 +340,25 @@ export const NEXT_STEPS: NextStep[] = [
   },
 ];
 
+/* Homepage vendor section. Drop official logo files at
+   /public/img/vendors/<slug>.svg (or .png) and they replace the wordmark
+   automatically — see public/img/vendors/README.txt. */
+// Set `logo: true` once an official file exists at /img/vendors/<slug>.svg.
+export type Brand = { name: string; slug: string; url: string; logo?: boolean };
+
+export const VENDOR_BRANDS: Brand[] = [
+  { name: "Mannington", slug: "mannington", url: "https://www.mannington.com" },
+  { name: "Bruce", slug: "bruce", url: "https://www.bruce.com" },
+  { name: "Mullican", slug: "mullican", url: "https://www.mullicanflooring.com" },
+  { name: "Lifecore", slug: "lifecore", url: "https://www.lifecoreflooring.com" },
+  { name: "Homerwood", slug: "homerwood", url: "https://www.homerwood.com" },
+  { name: "Prestige", slug: "prestige", url: "#" },
+  { name: "TMBR.", slug: "tmbr", url: "#" },
+  { name: "Daltile", slug: "daltile", url: "https://www.daltile.com" },
+  { name: "Shaw", slug: "shaw", url: "https://shawfloors.com" },
+  { name: "Mohawk", slug: "mohawk", url: "https://www.mohawkflooring.com" },
+];
+
 export const VENDORS = [
   "Mannington",
   "Bruce",
