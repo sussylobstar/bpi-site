@@ -2,7 +2,7 @@ import Hero from "../components/Hero";
 import WelcomeVideo from "../components/WelcomeVideo";
 import Mission from "../components/Mission";
 import Products from "../components/Products";
-import Awards from "../components/Awards";
+import IndustryPartners from "../components/IndustryPartners";
 import Vendors from "../components/Vendors";
 import Partner from "../components/Partner";
 import Locations from "../components/Locations";
@@ -15,7 +15,7 @@ export default function Home() {
       <WelcomeVideo />
       <Mission />
       <Products />
-      <Awards />
+      <IndustryPartners />
       <Vendors />
       <Partner />
       <Locations />
