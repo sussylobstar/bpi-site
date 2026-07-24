@@ -11,21 +11,21 @@ export default function Events() {
         img="/img/slide-counters.jpg"
       />
       <Section tone="ink">
-        <ul className="border-t border-white/10">
+        <ul className="border-t border-ink/10">
           {EVENTS.map((e) => (
             <li
               key={e.title}
-              className="grid md:grid-cols-[180px_1fr_auto] gap-4 md:gap-8 items-baseline py-[clamp(24px,3vw,40px)] border-b border-white/10"
+              className="grid md:grid-cols-[180px_1fr_auto] gap-4 md:gap-8 items-baseline py-[clamp(24px,3vw,40px)] border-b border-ink/10"
             >
               <p className="display text-red text-[clamp(15px,1.4vw,19px)]">{e.date}</p>
               <div>
-                <h2 className="font-light text-[clamp(20px,2.2vw,30px)] tracking-[-0.01em]">
+                <h2 className="font-normal text-[clamp(20px,2.2vw,30px)] tracking-[-0.01em]">
                   {e.title}
                 </h2>
-                <p className="mt-1.5 text-[13px] tracking-[0.06em] uppercase text-white/45">
+                <p className="mt-1.5 text-[13px] tracking-[0.06em] uppercase text-ink/45">
                   {e.location}
                 </p>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/65 font-light max-w-[60ch]">
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/60 font-normal max-w-[60ch]">
                   {e.desc}
                 </p>
               </div>

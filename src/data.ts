@@ -280,8 +280,12 @@ export const POSTS: Post[] = [
 
 /* Welcome video — swap in BPI's real YouTube ID when provided. */
 export const WELCOME_VIDEO = {
-  // TODO(BPI): replace with the real welcome-video YouTube ID
-  youtubeId: "ScMzIvxBSi4",
+  // TODO(BPI): replace with the real welcome-video YouTube ID.
+  // NOTE: verify any replacement allows embedding — some channels disable it,
+  // and the player then renders a black box (error 150/152).
+  youtubeId: "bzeDjtnhmh0",
+  heroTitle: "welcome to bpi",
+  caption: "Sixty years of making the floor the easiest part of the job.",
   title: "Welcome to Building Plastics Inc.",
   blurb:
     "Sixty years of making the floor the easiest part of the job — meet the team, the branches and the way we work.",

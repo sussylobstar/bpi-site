@@ -11,7 +11,7 @@ export default function Sds() {
       />
       <Section tone="ink">
         <div className="max-w-[640px]">
-          <p className="text-[clamp(15px,1.2vw,18px)] leading-[1.75] text-white/70 font-light">
+          <p className="text-[clamp(15px,1.2vw,18px)] leading-[1.75] text-ink/65 font-normal">
             SDS documents are hosted in our compliance portal, kept current by
             the manufacturers themselves. Open the portal to search the full
             library and download the sheets you need.
@@ -21,7 +21,7 @@ export default function Sds() {
               Open the SDS portal <Arrow />
             </Btn>
           </div>
-          <p className="mt-6 text-[13px] text-white/40 font-light">
+          <p className="mt-6 text-[13px] text-ink/45 font-normal">
             Can't find a sheet? Your BPI rep can pull it for you directly.
           </p>
         </div>

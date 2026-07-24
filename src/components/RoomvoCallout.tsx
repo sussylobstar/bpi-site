@@ -18,11 +18,11 @@ export default function RoomvoCallout({
             <p className="text-[12px] tracking-[0.2em] uppercase text-white/70">
               Visualize with Roomvo
             </p>
-            <h2 className="mt-3 font-extralight text-[clamp(24px,3vw,40px)] leading-[1.1] tracking-[-0.01em] text-balance">
+            <h2 className="mt-3 font-extrabold text-[clamp(24px,3vw,40px)] leading-[1.1] tracking-[-0.01em] text-balance">
               See {product ? product.toLowerCase() : "any floor"} in your own
               room before you buy.
             </h2>
-            <p className="mt-4 text-[15px] leading-[1.7] text-white/85 font-light">
+            <p className="mt-4 text-[15px] leading-[1.7] text-white/85 font-normal">
               Upload a photo of your space and preview real products to scale
               with our Roomvo visualizer — no guesswork, no samples required.
             </p>

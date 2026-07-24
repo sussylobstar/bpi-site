@@ -49,7 +49,7 @@ export default function DemoForm({
 
   if (sent) {
     return (
-      <div className="border border-white/12 bg-ink-2 p-[clamp(28px,4vw,48px)]">
+      <div className="border border-ink/10 bg-light-2 p-[clamp(28px,4vw,48px)]">
         <div
           className="h-10 w-10 rounded-full bg-red flex items-center justify-center text-white text-[20px]"
           aria-hidden
@@ -59,7 +59,7 @@ export default function DemoForm({
         <h3 className="mt-5 display text-[clamp(22px,2.4vw,32px)]">
           {successTitle}
         </h3>
-        <p className="mt-3 text-[15px] leading-relaxed text-white/70 font-light max-w-[46ch]">
+        <p className="mt-3 text-[15px] leading-relaxed text-ink/65 font-normal max-w-[46ch]">
           {successBody}
         </p>
       </div>
@@ -67,7 +67,7 @@ export default function DemoForm({
   }
 
   const inputCls =
-    "w-full bg-ink border border-white/15 px-4 py-3 text-[15px] text-white font-light placeholder:text-white/35 focus:border-red focus:outline-none transition-colors";
+    "w-full bg-light border border-ink/12 px-4 py-3 text-[15px] text-ink font-normal placeholder:text-ink/35 focus:border-red focus:outline-none transition-colors";
 
   return (
     <form onSubmit={onSubmit} noValidate className="grid sm:grid-cols-2 gap-5">
@@ -75,7 +75,7 @@ export default function DemoForm({
         <div key={f.name} className={f.full ? "sm:col-span-2" : ""}>
           <label
             htmlFor={f.name}
-            className="block text-[12px] tracking-[0.12em] uppercase text-white/55 mb-2"
+            className="block text-[12px] tracking-[0.12em] uppercase text-ink/55 mb-2"
           >
             {f.label}
             {f.required && <span className="text-red"> *</span>}
@@ -128,7 +128,7 @@ export default function DemoForm({
         >
           {submitLabel} <span aria-hidden>→</span>
         </button>
-        <p className="text-[12.5px] text-white/40 font-light">
+        <p className="text-[12.5px] text-ink/45 font-normal">
           Concept demo — submissions aren't sent anywhere.
         </p>
       </div>

@@ -16,19 +16,19 @@ export default function Careers() {
         img="/img/slide-hardwood.jpg"
       />
       <Section tone="ink">
-        <div className="grid sm:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <div className="grid sm:grid-cols-3 gap-px bg-ink/10 border border-ink/10">
           {REASONS.map(([h, d]) => (
-            <div key={h} className="bg-ink p-[clamp(22px,2.6vw,38px)]">
+            <div key={h} className="bg-light p-[clamp(22px,2.6vw,38px)]">
               <h2 className="display text-[clamp(17px,1.7vw,24px)] leading-tight">{h}</h2>
-              <p className="mt-3 text-[14px] leading-relaxed text-white/60 font-light">{d}</p>
+              <p className="mt-3 text-[14px] leading-relaxed text-ink/55 font-normal">{d}</p>
             </div>
           ))}
         </div>
-        <div className="mt-[clamp(40px,6vw,72px)] border border-white/10 bg-ink-2 p-[clamp(28px,4vw,52px)] max-w-[720px]">
-          <h2 className="font-extralight text-[clamp(22px,2.6vw,36px)] tracking-[-0.01em]">
+        <div className="mt-[clamp(40px,6vw,72px)] border border-ink/10 bg-light-2 p-[clamp(28px,4vw,52px)] max-w-[720px]">
+          <h2 className="font-extrabold text-[clamp(22px,2.6vw,36px)] tracking-[-0.01em]">
             Interested in joining us?
           </h2>
-          <p className="mt-4 text-[15px] leading-relaxed text-white/70 font-light max-w-[52ch]">
+          <p className="mt-4 text-[15px] leading-relaxed text-ink/65 font-normal max-w-[52ch]">
             Send your résumé and the role or branch you're interested in, and
             our team will be in touch.
           </p>

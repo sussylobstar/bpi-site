@@ -38,11 +38,11 @@ export default function IndustryPartners() {
         <p className="text-[12px] tracking-[0.22em] uppercase text-red font-semibold">
           Industry Partners
         </p>
-        <h2 className="mt-4 font-extralight text-[clamp(24px,3vw,42px)] leading-[1.08] tracking-[-0.01em] text-balance max-w-[20ch] mx-auto text-ink">
+        <h2 className="mt-4 font-extrabold text-[clamp(24px,3vw,42px)] leading-[1.08] tracking-[-0.01em] text-balance max-w-[20ch] mx-auto text-ink">
           Active in the associations that set the standard.
         </h2>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink/10 border border-ink/10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-light/10 border border-ink/10">
         {PARTNERS.map((p) => (
           <div
             key={p.name}

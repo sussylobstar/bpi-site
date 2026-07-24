@@ -1,15 +1,65 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/* Archivo variable — thin grotesque standing in for Cosentino's       */
-/* licensed "Diagramm". License a proper thin grotesque for production. */
+/* Rawline — Raleway with lining figures (OFL). Stands in for the       */
+/* brand-standard "Rawline Extra Bold" headings.                        */
+/* Inter — near-identical open substitute for Aptos body copy.          */
 /* ------------------------------------------------------------------ */
 @font-face {
-  font-family: "Archivo";
+  font-family: "Rawline";
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 400;
   font-display: swap;
-  src: url("/fonts/archivo-latin.woff2") format("woff2");
+  src: url("/fonts/rawline-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Rawline";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/rawline-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Rawline";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/rawline-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Rawline";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/rawline-800.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/inter-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/inter-700-normal.woff2") format("woff2");
 }
 
 @theme {
@@ -17,18 +67,20 @@
   --color-red: #da1a32; /* BPI brand red, from the white-on-red mark */
   --color-red-deep: #b3121f;
 
-  /* Warm near-black ground — the site lives here */
-  --color-ink: #0d0b0b;
-  --color-ink-2: #171313; /* raised panels / alt bands */
-  --color-ink-3: #221c1c; /* hairline surfaces */
+  /* Warm near-black — now used for ink TEXT and the rare dark element */
+  --color-ink: #17120f;
+  --color-ink-2: #241d19;
+  --color-ink-3: #322824;
 
-  /* One genuinely-neutral light surface for the showroom band.        */
-  /* Kept at ~0 chroma on purpose — not a warm cream.                  */
-  --color-light: #f3f2f1;
-  --color-light-2: #e7e5e3;
+  /* Light grounds — the site now lives here (approved light direction) */
+  --color-light: #ffffff; /* base page ground */
+  --color-light-2: #f4f3f1; /* warm off-white alt band */
+  --color-light-3: #e9e6e2; /* hairline / borders */
 
-  --font-display: "Archivo", "Helvetica Neue", "Segoe UI", system-ui,
-    -apple-system, Arial, sans-serif;
+  /* Rawline Extra Bold headings · Inter body (Aptos stand-in) */
+  --font-head: "Rawline", "Segoe UI", system-ui, -apple-system, Arial,
+    sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -45,12 +97,21 @@
 
   body {
     margin: 0;
-    background: var(--color-ink);
-    color: #fff;
-    font-family: var(--font-display);
-    font-weight: 300;
+    background: var(--color-light);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  /* Brand standard: h1/h2/h3 all Rawline Extra Bold */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-head);
+    font-weight: 800;
+    letter-spacing: -0.005em;
   }
 
   ::selection {
@@ -97,11 +158,12 @@ html.lenis body {
     padding-inline: var(--pad);
   }
 
-  /* Thin architectural display type — the Cosentino move */
+  /* Rawline Extra Bold display — brand-standard H3 (all caps) + numerals */
   .display {
-    font-weight: 200;
+    font-family: var(--font-head);
+    font-weight: 800;
     text-transform: uppercase;
-    line-height: 0.98;
+    line-height: 1;
     letter-spacing: 0.005em;
   }
 }
@@ -124,11 +186,11 @@ html.lenis body {
 }
 
 /* ------------------------------------------------------------------ */
-/* Leaflet map — dark theme to match the site                          */
+/* Leaflet map — light theme to match the site                         */
 /* ------------------------------------------------------------------ */
 .leaflet-container {
-  font-family: var(--font-display);
-  background: var(--color-ink-2);
+  font-family: var(--font-body);
+  background: var(--color-light-2);
 }
 /* kill the default white box leaflet puts behind divIcons */
 .leaflet-div-icon {
@@ -144,7 +206,7 @@ html.lenis body {
   border: 2px solid #fff;
   box-shadow:
     0 0 0 3px rgba(218, 26, 50, 0.22),
-    0 1px 5px rgba(0, 0, 0, 0.55);
+    0 1px 5px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s var(--ease-out-expo);
   transform-origin: center;
 }
@@ -152,40 +214,40 @@ html.lenis body {
   transform: scale(1.3);
   box-shadow:
     0 0 0 4px rgba(218, 26, 50, 0.3),
-    0 0 14px rgba(218, 26, 50, 0.6);
+    0 0 14px rgba(218, 26, 50, 0.55);
 }
 .bpi-pin.active {
   transform: scale(1.55);
   z-index: 600;
   box-shadow:
     0 0 0 5px rgba(218, 26, 50, 0.35),
-    0 0 20px rgba(218, 26, 50, 0.75);
+    0 0 20px rgba(218, 26, 50, 0.7);
 }
 .bpi-pin-wrap:hover .bpi-pin {
   transform: scale(1.35);
 }
 
-/* Popup — dark card */
+/* Popup — light card */
 .leaflet-popup-content-wrapper {
-  background: var(--color-ink-2);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #fff;
+  color: var(--color-ink);
+  border: 1px solid var(--color-light-3);
   border-radius: 2px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
 }
 .leaflet-popup-content {
   margin: 16px 18px;
 }
 .leaflet-popup-tip {
-  background: var(--color-ink-2);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #fff;
+  border: 1px solid var(--color-light-3);
 }
 .leaflet-popup-close-button {
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(23, 18, 15, 0.5) !important;
   padding: 8px 8px 0 0 !important;
 }
 .leaflet-popup-close-button:hover {
-  color: #fff !important;
+  color: var(--color-ink) !important;
 }
 .bpi-popup__tag {
   display: block;
@@ -197,24 +259,24 @@ html.lenis body {
   margin-bottom: 6px;
 }
 .bpi-popup__city {
-  font-weight: 200;
-  text-transform: uppercase;
+  font-family: var(--font-head);
+  font-weight: 800;
   letter-spacing: 0.01em;
-  font-size: 22px;
+  font-size: 20px;
   margin: 0;
 }
 .bpi-popup__addr {
   margin: 8px 0 0;
   font-size: 13px;
   line-height: 1.5;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  color: rgba(23, 18, 15, 0.65);
 }
 .leaflet-popup-content a.bpi-popup__phone {
   display: inline-block;
   margin-top: 10px;
   font-size: 14px;
-  color: #fff;
+  color: var(--color-ink);
 }
 .leaflet-popup-content a.bpi-popup__phone:hover {
   color: var(--color-red);
@@ -227,21 +289,21 @@ html.lenis body {
   text-transform: uppercase;
   color: var(--color-red);
 }
-/* Controls + attribution, toned for dark */
+/* Controls + attribution, toned for light */
 .leaflet-bar a {
-  background: var(--color-ink-2);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.15);
+  background: #fff;
+  color: var(--color-ink);
+  border-color: var(--color-light-3);
 }
 .leaflet-bar a:hover {
-  background: var(--color-ink-3);
+  background: var(--color-light-2);
 }
 .leaflet-control-attribution {
-  background: rgba(13, 11, 11, 0.7) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(23, 18, 15, 0.5) !important;
 }
 .leaflet-control-attribution a {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(23, 18, 15, 0.7) !important;
 }
 
 /* Homepage vendor carousel — two rows drifting in opposite directions.
@@ -265,7 +327,7 @@ html.lenis body {
 /* Uniform muted logo wall — full color on hover (keeps mixed logos cohesive) */
 .vendor-logo {
   filter: grayscale(1);
-  opacity: 0.65;
+  opacity: 0.6;
   transition:
     filter 0.3s ease,
     opacity 0.3s ease;
@@ -274,10 +336,10 @@ a:hover > .vendor-logo {
   filter: none;
   opacity: 1;
 }
-/* Hero strip sits on the dark ground — render logos as uniform white */
+/* Hero strip now sits on the light ground — muted grayscale like the wall */
 .vendor-logo-strip {
-  filter: brightness(0) invert(1);
-  opacity: 0.6;
+  filter: grayscale(1);
+  opacity: 0.55;
 }
 /* Industry-partner logos on the light band — muted grayscale, color on hover */
 .partner-logo {
