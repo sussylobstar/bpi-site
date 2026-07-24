@@ -13,13 +13,13 @@ export default function BlogPost() {
       <PageHero eyebrow={`${post.category} · ${post.date}`} title={post.title} />
       <Section tone="ink">
         <article className="max-w-[68ch]">
-          <div className="space-y-6 text-[clamp(16px,1.25vw,19px)] leading-[1.8] text-white/75 font-light [text-wrap:pretty]">
+          <div className="space-y-6 text-[clamp(16px,1.25vw,19px)] leading-[1.8] text-ink/65 font-normal [text-wrap:pretty]">
             {post.body.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
           </div>
-          <div className="mt-14 pt-8 border-t border-white/10">
-            <Link to="/blog" className="text-[14px] text-white/70 hover:text-red transition-colors">
+          <div className="mt-14 pt-8 border-t border-ink/10">
+            <Link to="/blog" className="text-[14px] text-ink/65 hover:text-red transition-colors">
               ← All posts
             </Link>
           </div>

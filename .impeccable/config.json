@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "reason": "User confirmed Inter is the intentional licensing-safe substitute for Aptos body per the approved BPI light-realign direction",
+        "createdAt": "2026-07-24T01:24:21.031Z"
+      }
+    ]
+  }
+}

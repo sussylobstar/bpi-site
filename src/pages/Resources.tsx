@@ -46,22 +46,22 @@ export default function Resources() {
         img="/img/slide-hardwood.jpg"
       />
       <Section tone="ink">
-        <ul className="grid sm:grid-cols-2 border-t border-l border-white/10">
+        <ul className="grid sm:grid-cols-2 border-t border-l border-ink/10">
           {RESOURCES.map((r) => (
             <li
               key={r.title}
-              className="border-b border-r border-white/10 p-[clamp(24px,3vw,44px)] flex flex-col gap-5"
+              className="border-b border-r border-ink/10 p-[clamp(24px,3vw,44px)] flex flex-col gap-5"
             >
               <div>
                 <div className="flex items-center gap-3">
                   <h2 className="display text-[clamp(18px,1.9vw,26px)]">{r.title}</h2>
                   {r.status === "soon" && (
-                    <span className="text-[10px] tracking-[0.18em] uppercase text-white/45 border border-white/20 px-2 py-1">
+                    <span className="text-[10px] tracking-[0.18em] uppercase text-ink/45 border border-ink/15 px-2 py-1">
                       Coming soon
                     </span>
                   )}
                 </div>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/60 font-light max-w-[44ch]">
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/55 font-normal max-w-[44ch]">
                   {r.desc}
                 </p>
               </div>

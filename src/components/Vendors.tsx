@@ -25,7 +25,7 @@ function VendorLogo({ brand }: { brand: Brand }) {
           className="vendor-logo max-h-9 w-auto object-contain"
         />
       ) : (
-        <span className="whitespace-nowrap text-[clamp(15px,1.6vw,20px)] tracking-[0.06em] uppercase text-ink/70 font-light">
+        <span className="whitespace-nowrap text-[clamp(15px,1.6vw,20px)] tracking-[0.06em] uppercase text-ink/70 font-normal">
           {brand.name}
         </span>
       )}
@@ -41,10 +41,10 @@ export default function Vendors() {
   return (
     <Section tone="light" id="vendors">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-[clamp(32px,4vw,56px)]">
-        <h2 className="font-extralight text-[clamp(26px,3.4vw,48px)] leading-[1.06] tracking-[-0.01em] text-balance max-w-[15ch]">
+        <h2 className="font-extrabold text-[clamp(26px,3.4vw,48px)] leading-[1.06] tracking-[-0.01em] text-balance max-w-[15ch]">
           The brands your customers ask for.
         </h2>
-        <p className="text-[15px] leading-[1.7] text-ink/65 font-light max-w-[40ch]">
+        <p className="text-[15px] leading-[1.7] text-ink/65 font-normal max-w-[40ch]">
           BPI stocks the vendors that move — so you can say yes to more of the
           floor, from one purchase order.
         </p>

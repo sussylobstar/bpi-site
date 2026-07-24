@@ -28,7 +28,7 @@ function Tile({
   return (
     <Link
       to={href}
-      className={`group relative block overflow-hidden bg-ink-2 ${className ?? ""}`}
+      className={`group relative block overflow-hidden bg-light-2 ${className ?? ""}`}
     >
       <img
         src={img}
@@ -43,11 +43,16 @@ function Tile({
             "linear-gradient(0deg, rgba(12,10,10,.82) 0%, rgba(12,10,10,.15) 55%, rgba(12,10,10,.05) 100%)",
         }}
       />
+      {/* red hover wash — nods to the BPI mark (per approved mockup) */}
+      <div
+        className="absolute inset-0 bg-red opacity-0 transition-opacity duration-300 ease-[var(--ease-out-expo)] group-hover:opacity-80 mix-blend-multiply"
+        aria-hidden
+      />
       <div className="relative h-full flex flex-col justify-end p-[clamp(20px,2.2vw,34px)]">
         <h3 className="display text-white text-[clamp(24px,3vw,44px)]">
           {title}
         </h3>
-        <p className="mt-2 max-w-[38ch] text-[14px] leading-relaxed text-white/75 font-light">
+        <p className="mt-2 max-w-[38ch] text-[14px] leading-relaxed text-white/80 font-normal">
           {blurb}
         </p>
         <span className="mt-4 inline-flex items-center gap-2 text-[13px] tracking-[0.14em] uppercase text-white/0 group-hover:text-white transition-colors duration-300">
@@ -66,10 +71,10 @@ export default function Products() {
     >
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-[clamp(36px,5vw,64px)]">
-          <h2 className="font-extralight text-[clamp(30px,4.4vw,62px)] leading-[1.04] tracking-[-0.01em] text-balance max-w-[14ch]">
+          <h2 className="font-extrabold text-[clamp(30px,4.4vw,62px)] leading-[1.04] tracking-[-0.01em] text-balance max-w-[14ch]">
             The whole floor, from one source.
           </h2>
-          <p className="text-[15px] leading-[1.7] text-ink/65 font-light max-w-[42ch]">
+          <p className="text-[15px] leading-[1.7] text-ink/65 font-normal max-w-[42ch]">
             Seven categories, hundreds of lines, one purchase order. Every
             category below is a door into the full BPI catalog.
           </p>
@@ -93,7 +98,7 @@ export default function Products() {
                   <h3 className="display text-[clamp(19px,1.9vw,28px)] text-ink">
                     {c.title}
                   </h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-ink/60 font-light max-w-[34ch]">
+                  <p className="mt-2 text-[14px] leading-relaxed text-ink/60 font-normal max-w-[34ch]">
                     {c.blurb}
                   </p>
                 </div>
@@ -108,7 +113,7 @@ export default function Products() {
           ))}
         </ul>
 
-        <p className="mt-8 text-[13px] text-ink/45 font-light">
+        <p className="mt-8 text-[13px] text-ink/45 font-normal">
           Full line-item catalog is rolling out as our ERP integration comes
           online. In the meantime, your BPI rep can pull availability on any
           product.

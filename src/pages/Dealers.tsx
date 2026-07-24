@@ -25,13 +25,13 @@ export default function Dealers() {
       />
 
       <Section tone="ink">
-        <dl className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/12 border border-white/12">
+        <dl className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-ink/10 border border-ink/10">
           {DEALER_VALUE.map((v) => (
-            <div key={v.label} className="bg-ink p-[clamp(20px,2.4vw,34px)]">
+            <div key={v.label} className="bg-light p-[clamp(20px,2.4vw,34px)]">
               <dt className="display text-red text-[clamp(26px,3.2vw,44px)] leading-none">{v.metric}</dt>
               <dd className="mt-3">
-                <span className="block text-[14px] text-white">{v.label}</span>
-                <span className="mt-1 block text-[12.5px] leading-relaxed text-white/55 font-light">{v.desc}</span>
+                <span className="block text-[14px] text-ink">{v.label}</span>
+                <span className="mt-1 block text-[12.5px] leading-relaxed text-ink/55 font-normal">{v.desc}</span>
               </dd>
             </div>
           ))}
@@ -39,31 +39,31 @@ export default function Dealers() {
       </Section>
 
       <Section tone="light">
-        <h2 className="font-extralight text-[clamp(24px,3vw,44px)] tracking-[-0.01em] mb-[clamp(28px,4vw,52px)]">
+        <h2 className="font-extrabold text-[clamp(24px,3vw,44px)] tracking-[-0.01em] mb-[clamp(28px,4vw,52px)]">
           What partnering with BPI gets you.
         </h2>
         <div className="grid sm:grid-cols-2 border-t border-l border-ink/15">
           {BENEFITS.map(([h, d]) => (
             <div key={h} className="border-b border-r border-ink/15 p-[clamp(24px,3vw,44px)]">
               <h3 className="display text-[clamp(18px,1.9vw,26px)] text-ink">{h}</h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-ink/65 font-light max-w-[42ch]">{d}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink/65 font-normal max-w-[42ch]">{d}</p>
             </div>
           ))}
         </div>
       </Section>
 
       <Section tone="ink-2">
-        <h2 className="font-extralight text-[clamp(24px,3vw,44px)] tracking-[-0.01em] mb-[clamp(28px,4vw,52px)]">
+        <h2 className="font-extrabold text-[clamp(24px,3vw,44px)] tracking-[-0.01em] mb-[clamp(28px,4vw,52px)]">
           Becoming a dealer takes three steps.
         </h2>
-        <ol className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <ol className="grid md:grid-cols-3 gap-px bg-ink/10 border border-ink/10">
           {STEPS.map(([h, d], i) => (
-            <li key={h} className="bg-ink-2 p-[clamp(24px,3vw,40px)]">
-              <span className="display text-white/25 text-[clamp(30px,4vw,56px)] leading-none">
+            <li key={h} className="bg-light-2 p-[clamp(24px,3vw,40px)]">
+              <span className="display text-ink/25 text-[clamp(30px,4vw,56px)] leading-none">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-4 display text-[clamp(18px,1.8vw,26px)]">{h}</h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-white/60 font-light">{d}</p>
+              <p className="mt-3 text-[14px] leading-relaxed text-ink/55 font-normal">{d}</p>
             </li>
           ))}
         </ol>

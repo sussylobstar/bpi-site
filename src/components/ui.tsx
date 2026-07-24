@@ -43,35 +43,35 @@ export function PageHero({
   img?: string;
 }) {
   return (
-    <header className="relative isolate overflow-hidden bg-ink pt-[clamp(120px,16vh,180px)] pb-[clamp(48px,7vw,96px)] gutter">
+    <header className="relative isolate overflow-hidden bg-light pt-[clamp(120px,16vh,180px)] pb-[clamp(48px,7vw,96px)] gutter">
       {img && (
         <>
           <img
             src={img}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-40"
+            className="absolute inset-0 h-full w-full object-cover opacity-[0.14]"
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(0deg, rgba(13,11,11,.96) 0%, rgba(13,11,11,.6) 60%, rgba(13,11,11,.55) 100%)",
+                "linear-gradient(0deg, #fff 0%, rgba(255,255,255,.72) 55%, rgba(255,255,255,.55) 100%)",
             }}
           />
         </>
       )}
       <Container className="relative">
         {eyebrow && (
-          <p className="flex items-center gap-4 text-[13px] tracking-[0.02em] text-white/80 mb-6">
+          <p className="flex items-center gap-4 text-[13px] tracking-[0.02em] text-ink/70 mb-6">
             <span className="h-px w-9 bg-red flex-none" aria-hidden />
             {eyebrow}
           </p>
         )}
-        <h1 className="font-extralight text-[clamp(34px,6vw,84px)] leading-[1.02] tracking-[-0.01em] text-balance max-w-[18ch]">
+        <h1 className="font-extrabold text-[clamp(34px,6vw,84px)] leading-[1.02] tracking-[-0.01em] text-balance max-w-[18ch]">
           {title}
         </h1>
         {intro && (
-          <p className="mt-6 text-[clamp(15px,1.3vw,19px)] leading-[1.7] text-white/70 font-light max-w-[62ch]">
+          <p className="mt-6 text-[clamp(15px,1.3vw,19px)] leading-[1.7] text-ink/65 font-normal max-w-[62ch]">
             {intro}
           </p>
         )}
@@ -96,8 +96,8 @@ export function Section({
     tone === "light"
       ? "bg-light text-ink"
       : tone === "ink-2"
-        ? "bg-ink-2 text-white"
-        : "bg-ink text-white";
+        ? "bg-light-2 text-ink"
+        : "bg-light text-ink";
   return (
     <section
       id={id}
@@ -131,16 +131,12 @@ export function Btn({
 }: BtnProps) {
   const base =
     "inline-flex items-center gap-2.5 px-7 py-[15px] text-[15px] font-normal transition-colors";
+  // Site is a single light theme now — tone kept for API compatibility.
+  void tone;
   const styles = {
     solid: "bg-red text-white hover:bg-red-deep",
-    outline:
-      tone === "onLight"
-        ? "border border-ink/30 text-ink hover:bg-ink hover:text-white"
-        : "border border-white/50 text-white hover:bg-white hover:text-ink",
-    ghost:
-      tone === "onLight"
-        ? "px-2 text-ink/70 hover:text-ink"
-        : "px-2 text-white/80 hover:text-white",
+    outline: "border border-ink/30 text-ink hover:bg-ink hover:text-white",
+    ghost: "px-2 text-ink/70 hover:text-ink",
   }[variant];
   const cls = `${base} ${styles} ${className}`;
 

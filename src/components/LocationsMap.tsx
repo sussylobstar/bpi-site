@@ -76,11 +76,11 @@ export default function LocationsMap({
       zoom={5}
       scrollWheelZoom={true}
       wheelPxPerZoomLevel={90}
-      className="h-full w-full bg-ink-2"
+      className="h-full w-full bg-light-2"
       attributionControl
     >
       <TileLayer
-        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
         subdomains="abcd"
         maxZoom={19}
