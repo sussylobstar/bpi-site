@@ -1,18 +1,6 @@
 import { VENDOR_BRANDS, WELCOME_VIDEO } from "../data";
 import { Container } from "./ui";
 
-/* Muted autoplay is the only autoplay browsers allow; loop needs `playlist` set
-   to the same id. Controls stay on so visitors can unmute. */
-const params = new URLSearchParams({
-  autoplay: "1",
-  mute: "1",
-  loop: "1",
-  playlist: WELCOME_VIDEO.youtubeId,
-  rel: "0",
-  playsinline: "1",
-  modestbranding: "1",
-});
-
 export default function Hero() {
   return (
     <section className="bg-light text-ink pt-[clamp(112px,15vh,168px)] pb-[clamp(40px,5vw,72px)] gutter">
@@ -27,12 +15,16 @@ export default function Hero() {
         </h1>
 
         <div className="relative mt-[clamp(32px,4.5vw,64px)] aspect-video w-full overflow-hidden border border-ink/10 bg-light-2">
-          <iframe
-            className="absolute inset-0 h-full w-full"
-            src={`https://www.youtube.com/embed/${WELCOME_VIDEO.youtubeId}?${params}`}
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            src={WELCOME_VIDEO.src}
             title={WELCOME_VIDEO.title}
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            preload="metadata"
           />
         </div>
 
