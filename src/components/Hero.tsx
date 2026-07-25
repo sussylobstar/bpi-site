@@ -3,35 +3,43 @@ import { Container } from "./ui";
 
 export default function Hero() {
   return (
-    <section className="bg-light text-ink pt-[clamp(112px,15vh,168px)] pb-[clamp(40px,5vw,72px)] gutter">
-      <Container>
-        <p className="flex items-center gap-4 text-[13px] tracking-[0.02em] text-ink/70 mb-6">
-          <span className="h-px w-9 bg-red flex-none" aria-hidden />
-          Wholesale surfacing · employee-owned since 1963
-        </p>
+    <section className="bg-light text-ink pt-[clamp(112px,15vh,168px)] pb-[clamp(40px,5vw,72px)]">
+      <div className="gutter">
+        <Container>
+          <p className="flex items-center gap-4 text-[13px] tracking-[0.02em] text-ink/70 mb-6">
+            <span className="h-px w-9 bg-red flex-none" aria-hidden />
+            Wholesale surfacing · employee-owned since 1963
+          </p>
 
-        <h1 className="font-extrabold text-[clamp(34px,6vw,80px)] leading-[1.02] tracking-[-0.01em] text-balance max-w-[20ch]">
-          {WELCOME_VIDEO.heroTitle}
-        </h1>
+          <h1 className="font-extrabold text-[clamp(34px,6vw,80px)] leading-[1.02] tracking-[-0.01em] text-balance max-w-[20ch]">
+            {WELCOME_VIDEO.heroTitle}
+          </h1>
+        </Container>
+      </div>
 
-        <div className="relative mt-[clamp(32px,4.5vw,64px)] aspect-video w-full overflow-hidden border border-ink/10 bg-light-2">
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            src={WELCOME_VIDEO.src}
-            title={WELCOME_VIDEO.title}
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            preload="metadata"
-          />
-        </div>
+      {/* full-bleed welcome video */}
+      <div className="relative mt-[clamp(32px,4.5vw,64px)] w-full aspect-video max-h-[82vh] overflow-hidden border-y border-ink/10 bg-light-2">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src={WELCOME_VIDEO.src}
+          poster={WELCOME_VIDEO.poster}
+          title={WELCOME_VIDEO.title}
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+          preload="metadata"
+        />
+      </div>
 
-        <p className="mt-6 text-center text-[13px] tracking-[0.02em] text-ink/55 font-normal">
-          {WELCOME_VIDEO.caption}
-        </p>
-      </Container>
+      <div className="gutter">
+        <Container>
+          <p className="mt-6 text-center text-[13px] tracking-[0.02em] text-ink/55 font-normal">
+            {WELCOME_VIDEO.caption}
+          </p>
+        </Container>
+      </div>
 
       {/* vendor marquee */}
       <div

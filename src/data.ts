@@ -282,6 +282,7 @@ export const POSTS: Post[] = [
 export const WELCOME_VIDEO = {
   // Self-hosted BPI welcome video (supplied by BPI).
   src: "/video/welcome.mp4",
+  poster: "/video/welcome-poster.jpg",
   heroTitle: "welcome to bpi",
   caption: "Sixty years of making the floor the easiest part of the job.",
   title: "Welcome to Building Plastics Inc.",
