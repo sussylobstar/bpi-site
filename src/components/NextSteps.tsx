@@ -15,29 +15,30 @@ export default function NextSteps() {
           <Link
             key={s.title}
             to={s.href}
-            className="group relative flex flex-col justify-end min-h-[300px] overflow-hidden bg-light-2 border border-ink/10 p-[clamp(20px,2vw,28px)] transition-colors hover:border-ink/20"
+            className="group relative flex flex-col justify-end min-h-[300px] overflow-hidden bg-ink-2 p-[clamp(20px,2vw,28px)]"
           >
             {s.img && (
               <img
                 src={s.img}
                 alt=""
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover opacity-[0.12] transition-[opacity,transform] duration-[800ms] ease-[var(--ease-out-expo)] group-hover:opacity-20 group-hover:scale-105"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[800ms] ease-[var(--ease-out-expo)] group-hover:scale-105"
               />
             )}
+            {/* bottom-weighted scrim keeps the photo clear up top, text legible below */}
             <span
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(0deg, rgba(255,255,255,.85) 0%, rgba(255,255,255,.55) 60%, rgba(255,255,255,.35) 100%)",
+                  "linear-gradient(0deg, rgba(13,11,11,.92) 0%, rgba(13,11,11,.45) 45%, rgba(13,11,11,.08) 100%)",
               }}
               aria-hidden
             />
             <div className="relative">
-              <h3 className="display text-ink text-[clamp(19px,2vw,26px)] leading-tight">
+              <h3 className="display text-white text-[clamp(19px,2vw,26px)] leading-tight">
                 {s.title}
               </h3>
-              <p className="mt-2.5 text-[13.5px] leading-relaxed text-ink/65 font-normal">
+              <p className="mt-2.5 text-[13.5px] leading-relaxed text-white/80 font-normal">
                 {s.desc}
               </p>
               <span className="mt-4 inline-flex items-center gap-2 text-[12px] tracking-[0.16em] uppercase text-red">
